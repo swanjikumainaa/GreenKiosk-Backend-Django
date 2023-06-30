@@ -7,7 +7,7 @@ class Refunds(models.Model):
     refund_id = models.IntegerField()
     amount = models.DecimalField(max_digits = 6, decimal_places = 2)
     reason = models.TextField()
-    status = models.CharField()
+    status = models.CharField(max_length=50)
     request_date = models.DateTimeField(auto_now = True)
     processed_date = models.DateField(auto_now = True)
     
