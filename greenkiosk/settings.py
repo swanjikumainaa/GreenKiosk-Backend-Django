@@ -46,7 +46,12 @@ INSTALLED_APPS = [
     'offers',
     'reclaim',
     'registration',
-    'returns',    
+    'returns',   
+    'updates',
+    'transactions',
+    'delivery',
+    'seller',
+    'purchases',
     
     
 ]
