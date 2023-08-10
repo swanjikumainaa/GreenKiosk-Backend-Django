@@ -22,4 +22,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('inventory/',include('inventory.urls')),
     path('seller/',include('seller.urls')),
+    path('customer/',include('customer.urls')),
+    path('purchases/',include('purchases.urls')),
+    path('transactions/',include('transactions.urls')),
+    path('feedback/',include('feedback.urls')),
+    path('delivery/',include('delivery.urls')),
+    path('basket/',include('basket.urls')),
+    path('updates/',include('updates.urls')),
+    path('reclaim/',include('reclaim.urls')),
+    path('offers/',include('offers.urls')),
+
 ]
