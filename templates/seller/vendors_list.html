@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendors display list</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vendorsdisplay">
+<table>
+<th>
+<td>Vendor Name</td>
+<td>Store Name</td>
+<td>Location</td>
+<td>Contact</td>
+<td>Vendor Details</td>
+<td>Vendor Details Editing</td>
+</th>
+{% for vendor in vendors %}
+<tr>
+<td>{{vendor.name}}</td>
+<td>{{vendor.store_name}}</td>
+<td>{{vendor.location}}</td>
+<td>{{vendor..contact}}</td>
+<td><a href = "{% url 'vendor_detail_view' id=vendor.id %}">View Vendor</a></td>
+<td><a href = "{% url 'vendor_edit_view' id=vendor.id %}">Edit Vendor Details</a></td>
+
+
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
