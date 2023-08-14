@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendors display list</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vendorsdisplay">
+<table>
+<th>
+<td> User Name</td>
+<td>Order Number</td>
+<td>Order Total</td>
+<td>Order Date</td>
+<td>Location</td>
+
+<td>Delivery Method</td>
+<td>Delivery Date</td>
+<td>Order Details Editing</td>
+</th>
+{% for order in orders %}
+<tr>
+<td>{{order.name}}</td>
+<td>{{order.order_number}}</td>
+<td>{{order.order_total}}</td>
+<td>{{order.order_date}}</td>
+<td>{{order.location}}</td>
+
+<td>{{order.delivery_method}}</td>
+<td>{{order.delivery_date}}</td>
+
+<td><a href = "{% url 'order_detail_view' id=order.id %}">View Order</a></td>
+<td><a href = "{% url 'order_edit_view' id=order.id %}">Edit Order Details</a></td>
+
+
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>

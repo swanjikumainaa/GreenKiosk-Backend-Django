@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Users display list</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="vendorsdisplay">
+<table>
+<th>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Date Registered</td>
+<td>Date of Birth</td>
+<td>Vendor Details Editing</td>
+</th>
+{% for user in users %}
+<tr>
+<td>
+    <h4>{{user.first_name}} </h4>
+</td>
+<td>
+    <p>{{user.last_name}}</p>
+</td>
+<td>
+    <p>{{user.date_registered}}</p>
+</td>
+<td>
+    <p>{{user.date_of_birth}}</p>
+</td>
+
+
+<td><a href = "{% url 'user_detail_view' id=user.id %}">View User</a></td>
+<td><a href = "{% url 'user_edit_view' id=user.id %}">Edit User Details</a></td>
+
+
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
